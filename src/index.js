@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {StoreProvider , createStore} from 'easy-peasy'
+import store from './store'
+const storemodel = createStore(store)
 
 ReactDOM.render(
+  <StoreProvider store={storemodel}>
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
+  </StoreProvider>,
   document.getElementById('root')
 );
 
